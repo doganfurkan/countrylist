@@ -14,7 +14,15 @@ nav{
     justify-content: space-between;
     max-width: 1300px;
     padding:1.5rem 2rem;
-    margin:0 auto
+    margin:0 auto;
+    align-items: center;
+}
+
+#navContainer a{
+    font-size:.8rem;
+    display: flex;
+    align-items: center;
+    gap:.4rem;
 }
 
 #logo{
