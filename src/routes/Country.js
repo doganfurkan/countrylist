@@ -4,10 +4,12 @@ import { Link, useParams } from "react-router-dom";
 import "./country.css";
 import { BsArrowLeft, BsArrowUpRightSquare } from "react-icons/bs";
 import { fetchData } from "../redux/countrySlice";
+import Errorpage from "./Errorpage";
 
 export default function Country(params) {
   let { countryCode } = useParams();
   const [loading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(true);
   const [cntry, setCntry] = useState({
     name: "name",
     flags: { png: "bayrak" },
@@ -20,12 +22,13 @@ export default function Country(params) {
     const res = await cntries.find((item) => item.alpha2Code === countryCode);
     setCntry(res);
     setLoading(false);
+    res && setHasError(false)
   }, [cntries, countryCode]);
 
   useEffect(() => {
     cntries.length > 0 ? getCountry() : dispatch(fetchData());
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [cntries.length,dispatch,getCountry]);
+  }, [cntries.length, dispatch, getCountry]);
 
   return (
     <main>
@@ -34,9 +37,13 @@ export default function Country(params) {
           <BsArrowLeft /> Main Page
         </Link>
       </div>
-      {loading ? (
+      {hasError ? (
+        <Errorpage />
+      ) : loading ? (
         "Loading..."
-      ) : dbLoading ? "Loading..." : (
+      ) : dbLoading ? (
+        "Loading..."
+      ) : (
         <div className="main">
           <div id="flag">
             <img src={cntry.flag} alt={cntry.name} />
@@ -47,7 +54,12 @@ export default function Country(params) {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={`https://www.google.com/maps/place/${cntry.name.indexOf("(") >= 0 ? cntry.name.slice(0,cntry.name.indexOf("(")) + cntry.name.slice(cntry.name.indexOf(")")+2) : cntry.name}`}
+                href={`https://www.google.com/maps/place/${
+                  cntry.name.indexOf("(") >= 0
+                    ? cntry.name.slice(0, cntry.name.indexOf("(")) +
+                      cntry.name.slice(cntry.name.indexOf(")") + 2)
+                    : cntry.name
+                }`}
               >
                 <BsArrowUpRightSquare />
                 See on Google Maps
@@ -91,9 +103,10 @@ export default function Country(params) {
             <div id="borders">
               <b>Border Countries:</b>
               {cntry.borders
-                ? cntry.borders.map((item,key) => {
+                ? cntry.borders.map((item, key) => {
                     return (
-                      <Link key={key}
+                      <Link
+                        key={key}
                         to={`../country/${
                           cntries.find(
                             (borderCountry) => borderCountry.alpha3Code === item

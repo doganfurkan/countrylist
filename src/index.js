@@ -8,11 +8,13 @@ import { Provider } from "react-redux";
 import {store} from "./redux/store"
 import Main from "./routes/Main";
 import Country from "./routes/Country";
+import Errorpage from "./routes/Errorpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Errorpage/>,
     children: [
       {
         index:true,

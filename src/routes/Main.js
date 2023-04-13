@@ -4,7 +4,7 @@ import Dropdown from "../components/Dropdown/Dropdown";
 import Searchbox from "../components/Searchbox/Searchbox";
 import Card from "../components/Card/Card";
 import "./main.css";
-import Loader from "../components/Loader/Loader";
+import Loader from "../components/Loading/Loading";
 import { Link } from "react-router-dom";
 
 export default function Main() {

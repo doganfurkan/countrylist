@@ -8,6 +8,7 @@ import {FaRegArrowAltCircleUp} from "react-icons/fa";
 
 function App() {
   const dispatch = useDispatch();
+  
 
   const watchScroll = useCallback(() => {
     window.addEventListener("scroll", () => {

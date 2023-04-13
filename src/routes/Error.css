@@ -1,0 +1,11 @@
+#error-page{
+    text-align: center;
+    padding:2rem;
+    display: flex;
+    flex-direction: column;
+    gap:1rem
+}
+
+.dark #error-page{
+    color:#fff;
+}
