@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useCallback } from "react";
+import "./App.css";
+import { useDispatch } from "react-redux";
+import { fetchData } from "./redux/countrySlice";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import {FaRegArrowAltCircleUp} from "react-icons/fa";
 
 function App() {
+  const dispatch = useDispatch();
+
+  const watchScroll = useCallback(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 100
+        ? document.getElementById("goTop").classList.remove("hidden")
+        : document.getElementById("goTop").classList.add("hidden");
+    });
+  },[])
+
+
+  useEffect(() => {
+    dispatch(fetchData());
+    watchScroll()
+  }, [dispatch,watchScroll]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <button id="goTop" className="hidden" onClick={() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }}><FaRegArrowAltCircleUp/> Go Top</button>
+      <Outlet />
+    </>
   );
 }
 

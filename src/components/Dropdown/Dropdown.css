@@ -1,0 +1,103 @@
+.customDropdown{
+    padding:1rem 5rem 1rem 1.5rem;
+    position: relative;
+    display: inline-block;
+    border-radius: .25rem;
+    font-size:.8rem;
+    box-shadow: .5rem .5rem .75rem rgba(0,0,0,0.05);
+    font-weight: 600;
+}
+
+.customDropdownTitle span{
+    position: absolute;
+    top:50%;
+    right:1.5rem;
+    transform: translateY(-50%);
+}
+
+.customDropdownTitle span svg{
+    vertical-align: middle;
+}
+
+.customOptionContainer{
+    position: absolute;
+    width:100%;
+    left:0;
+    top:100%;
+    display: none;
+    border-radius: 0 0 .25rem .25rem;
+    padding-top:.2rem;
+}
+
+.customOptions{
+    border-radius: .25rem;
+    padding:.5rem 0;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+.customOptions::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+.customOptions::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+.customOptions::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent 0% .5rem,#ccc .5rem calc(100% - .5rem),transparent calc(100% - .5rem));
+    width:8px;
+    margin-right: 2px;
+  }
+  
+.customOptions::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent 0% .5rem,#aaa .5rem calc(100% - .5rem),transparent calc(100% - .5rem)) 
+  }
+
+.customDropdownOption{
+    width:100%;
+    border:0;
+    background: transparent;
+    font-size: 1em;
+    text-align: left;
+    padding:.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.customDropdown:hover .customOptionContainer,
+.customDropdown:focus .customOptionContainer{
+    display: block;
+}
+
+
+.customDropdown[type=light]{
+    background: #fff;
+}
+
+.customDropdown[type=light] .customOptions{
+    background: #fff;
+    box-shadow: .5rem .5rem .75rem rgba(0,0,0,0.05);
+}
+
+.customDropdown[type=light] .customDropdownOption:hover{
+    background: #eee;
+}
+
+.customDropdown[type=dark]{
+    background: hsl(209, 23%, 22%);
+    color:hsl(0, 0%, 100%)
+}
+
+.customDropdown[type=dark] .customOptions{
+    background: hsl(209, 23%, 22%);
+    box-shadow: .5rem .5rem .75rem rgba(0,0,0,0.05);
+}
+
+.customDropdown[type=dark] .customOptions .customDropdownOption{
+    color:#fff
+}
+
+.customDropdown[type=dark] .customDropdownOption:hover{
+    background: hsl(207, 26%, 17%);
+}

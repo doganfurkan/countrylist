@@ -1,0 +1,51 @@
+nav{
+    width:100%;
+    background: #fff;
+    box-shadow: 0 0 1rem rgba(0,0,0,.05);
+}
+
+.dark nav{
+    background: hsl(209, 23%, 22%);
+    color:#fff
+}
+
+#navContainer{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    padding:1.5rem 2rem;
+    margin:0 auto
+}
+
+#logo{
+    font-weight: 800;
+    font-size:1.25rem;
+}
+
+button#themeChanger{
+    background: transparent;
+    border:0;
+    font-size:.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button#themeChanger svg{
+    vertical-align: middle;
+}
+
+.dark #themeChanger{
+    color:#fff
+}
+
+@media screen and (max-width:700px) {
+    #navContainer{
+        padding:1.5rem 1rem
+    }
+  }
+
+@media screen and (max-width:450px) {
+    #logo{
+        font-size:1rem;
+    }
+  }

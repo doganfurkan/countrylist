@@ -1,0 +1,109 @@
+#backContainer{
+    width: fit-content;
+    padding:.5rem 1rem;
+    background: #fff;
+    box-shadow: 0 0 .5rem rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    border-radius: .25rem;
+}
+
+.dark #backContainer{
+    background: hsl(209, 23%, 22%);
+    color:#fff;
+}
+
+#backContainer svg{
+    vertical-align: middle;
+}
+
+.main{
+    display: flex;
+    gap:3.5rem;
+    align-items: stretch;
+}
+
+.main>div{
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dark .main{
+    color:#fff
+}
+
+#flag img{
+    width: 100%;
+}
+
+#info{
+    gap:1rem;
+}
+
+#info h1{
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#info h1 a {
+    font-size:.8rem;
+    display: flex;
+    gap:.5rem;
+}
+
+#infos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+#borders{
+    display: flex;
+    gap:.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#borders a{
+    padding:.25rem 1rem;
+    background: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 0 .15rem rgba(0,0,0,0.1);
+}
+
+.dark #borders a{
+    background: hsl(209, 23%, 22%);
+}
+
+#borders a:hover,
+#borders a:focus{
+    text-decoration: underline;
+}
+
+@media screen and (max-width:700px) {
+    .main{
+        flex-direction: column;
+        padding:0 0 2rem
+    }
+
+    .main>div{
+        flex: auto;
+    }
+
+    #infos{
+        margin-top:2rem;
+        row-gap: .5rem;
+        grid-template-columns: 1fr;
+    }
+
+    #borders{
+        margin-top:2rem
+    }
+
+    #borders b{
+        width:100%
+    }
+}

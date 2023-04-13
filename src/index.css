@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  color:inherit
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: hsl(0, 0%, 98%);
+}
+
+body.dark{
+  background: hsl(207, 26%, 17%);
+}
+
+button#goTop{
+  position: fixed;
+  right:2rem;
+  bottom:2rem;
+  padding:.5rem 1rem;
+  border:0;
+  border-radius: .25rem;
+  cursor:pointer;
+  background: #fff;
+  font-weight: 800;
+  box-shadow: .5rem .5rem .75rem rgba(0,0,0,.1);
+  display: flex;
+  gap:.5rem;
+  align-items: center;
+}
+
+.dark button#goTop{
+  background: hsl(209, 23%, 22%);
+  color:#fff
+}
+
+button#goTop.hidden{
+  display: none;
+}
+
+@media screen and (max-width:700px) {
+  button#goTop{
+    bottom:1rem;
+  }
 }
