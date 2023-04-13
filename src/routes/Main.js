@@ -49,7 +49,7 @@ export default function Main() {
               title="Filter by Region"
               options={continents}
               optionFunc={handleRegionFilter}
-              type={theme === "dark" ? "dark" : "light"}
+              theme={theme === "dark" ? "dark" : "light"}
             />
           </header>
 

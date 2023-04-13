@@ -3,13 +3,13 @@ import "./Dropdown.css";
 import { FaChevronDown } from 'react-icons/fa';
 
 export default function Dropdown({
-  type = "light",
+  theme = "light",
   title = "title",
   options = ["option"],
   optionFunc,
 }) {
   return (
-    <div className="customDropdown" type={type} role="listbox" aria-roledescription="select">
+    <div className="customDropdown" theme={theme} role="listbox" aria-roledescription="select">
       <div className="customDropdownTitle">{title} <span><FaChevronDown /></span> </div>
       <div className="customOptionContainer">
         <div className="customOptions">
