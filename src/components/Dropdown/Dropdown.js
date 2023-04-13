@@ -9,7 +9,7 @@ export default function Dropdown({
   optionFunc,
 }) {
   return (
-    <div className="customDropdown" type={type} role="listbox">
+    <div className="customDropdown" type={type} role="listbox" aria-roledescription="select">
       <div className="customDropdownTitle">{title} <span><FaChevronDown /></span> </div>
       <div className="customOptionContainer">
         <div className="customOptions">
