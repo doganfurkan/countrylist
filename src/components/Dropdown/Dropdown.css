@@ -1,11 +1,17 @@
 .customDropdown{
-    padding:1rem 5rem 1rem 1.5rem;
+    padding:0;
     position: relative;
     display: inline-block;
     border-radius: .25rem;
     font-size:.8rem;
     box-shadow: .5rem .5rem .75rem rgba(0,0,0,0.05);
     font-weight: 600;
+}
+
+.customDropdownTitle{
+    border:0;
+    background: transparent;
+    padding:1rem 5rem 1rem 1.5rem
 }
 
 .customDropdownTitle span{
@@ -66,7 +72,7 @@
 }
 
 .customDropdown:hover .customOptionContainer,
-.customDropdown:focus .customOptionContainer{
+.customDropdown:focus-within .customOptionContainer{
     display: block;
 }
 
@@ -80,7 +86,8 @@
     box-shadow: .5rem .5rem .75rem rgba(0,0,0,0.05);
 }
 
-.customDropdown[theme=light] .customDropdownOption:hover{
+.customDropdown[theme=light] .customDropdownOption:hover,
+.customDropdown[theme=light] .customDropdownOption:focus-visible{
     background: #eee;
 }
 
@@ -98,6 +105,7 @@
     color:#fff
 }
 
-.customDropdown[theme=dark] .customDropdownOption:hover{
+.customDropdown[theme=dark] .customDropdownOption:hover,
+.customDropdown[theme=dark] .customDropdownOption:focus{
     background: hsl(207, 26%, 17%);
 }

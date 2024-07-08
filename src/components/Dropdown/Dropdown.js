@@ -10,7 +10,7 @@ export default function Dropdown({
 }) {
   return (
     <div className="customDropdown" theme={theme} role="listbox" aria-roledescription="select">
-      <div className="customDropdownTitle">{title} <span><FaChevronDown /></span> </div>
+      <button className="customDropdownTitle">{title} <span><FaChevronDown /></span> </button>
       <div className="customOptionContainer">
         <div className="customOptions">
           {options.map((item, key) => {
